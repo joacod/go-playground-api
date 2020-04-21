@@ -29,6 +29,10 @@ func setupRouter() *gin.Engine {
 		{
 			examples.GET("ping", c.PingExample)
 		}
+		lyrics := v1.Group("/lyrics")
+		{
+			lyrics.GET(":artist/:song", c.GetLyrics)
+		}
 	}
 
 	url := ginSwagger.URL("http://localhost:8080/swagger/doc.json") // The url pointing to API definition

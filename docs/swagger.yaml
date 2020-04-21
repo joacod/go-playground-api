@@ -1,4 +1,14 @@
 basePath: /api/v1
+definitions:
+  models.SongLyrics:
+    properties:
+      Artist:
+        type: string
+      Lyrics:
+        type: string
+      SongTitle:
+        type: string
+    type: object
 info:
   contact: {}
   description: This is a playground Web API using Gin framework.
@@ -33,4 +43,42 @@ paths:
       summary: ping example
       tags:
       - example
+  /lyrics/{artist}/{song}:
+    get:
+      consumes:
+      - application/json
+      description: Get lyrics from the public api https://api.lyrics.ovh/v1/%s/%s
+      parameters:
+      - description: Artist
+        in: path
+        name: artist
+        required: true
+        type: string
+      - description: Song
+        in: path
+        name: song
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SongLyrics'
+        "400":
+          description: ok
+          schema:
+            type: string
+        "404":
+          description: ok
+          schema:
+            type: string
+        "500":
+          description: ok
+          schema:
+            type: string
+      summary: Get lyrics from an Artist and a Song
+      tags:
+      - lyrics
 swagger: "2.0"
