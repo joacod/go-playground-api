@@ -20,9 +20,9 @@ $ go get -u github.com/swaggo/files
 ```
 
 ## How to Run it
-- From the terminal: `go run playground`
-- Once it's running, go to a browser
-- Hit the following url localhost:8080/swagger/index.html
+1. From the terminal: `go run playground`
+2. Once it's running, go to a browser
+3. Hit the following url http://localhost:8080/swagger/index.html
 
 ## Generating Swagger documentation
 If you change or add new apis:
