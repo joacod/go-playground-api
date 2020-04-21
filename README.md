@@ -1,6 +1,11 @@
 # go-playground-api
 Go playground Web API using [Gin](https://github.com/gin-gonic/gin) and [Swaggo](https://github.com/swaggo/gin-swagger)
 
+<p align="center">
+  <img height="200" src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png">
+  <img height="200" src="https://avatars0.githubusercontent.com/u/29616670?s=400&v=4">
+</p>
+
 ## Prerequisites
 - [Install Go](https://golang.org/)
 - [VS Code Extension for Go](https://github.com/microsoft/vscode-go)
