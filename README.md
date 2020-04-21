@@ -1,5 +1,5 @@
 # go-playground-api
-Go playground Web API using [Gin](https://github.com/gin-gonic/gin) and [Swaggo](https://github.com/swaggo/gin-swagger)
+Go playground Web API using [Gin](https://github.com/gin-gonic/gin) and [Swaggo](https://github.com/swaggo/gin-swagger) (Go version 1.14)
 
 <p align="center">
   <img height="200" src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png">
