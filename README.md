@@ -6,6 +6,14 @@ Go playground Web API using [Gin](https://github.com/gin-gonic/gin) and [Swaggo]
   <img height="200" src="https://avatars0.githubusercontent.com/u/29616670?s=400&v=4">
 </p>
 
+## Notes
+The idea of this project is to provide all the apis that exists in my other repository [NetCore.Playground.Api](https://github.com/joacod/NetCore.Playground.Api)
+
+What we get from this:
+- We practice different approaches in Go
+- We can compare **Go** implementation with the same one written in **.NetCore**
+- We have two versions of the same Web Api written in different languages, that can be switched from a UI having the exact same results
+
 ## Prerequisites
 - [Install Go](https://golang.org/)
 - [VS Code Extension for Go](https://github.com/microsoft/vscode-go)
