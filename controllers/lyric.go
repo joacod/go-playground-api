@@ -12,7 +12,7 @@ import (
 
 // GetLyrics godoc
 // @Summary Get lyrics from an Artist and a Song
-// @Description Get lyrics from the public api https://api.lyrics.ovh/v1/%s/%s
+// @Description Get lyrics from the public api https://api.lyrics.ovh/v1/
 // @Tags lyrics
 // @Accept json
 // @Produce json
