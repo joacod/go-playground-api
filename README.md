@@ -11,7 +11,7 @@ The idea of this project is to provide all the apis that exists in my other repo
 
 What we get from this:
 - We practice different approaches in Go
-- We can compare **Go** implementation with the same one written in **.NetCore**
+- We can compare **Go** implementations with the same ones written in **.NetCore**
 - We have two versions of the same Web Api written in different languages, that can be switched from a UI having the exact same results
 
 ## Prerequisites
