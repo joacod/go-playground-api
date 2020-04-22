@@ -47,7 +47,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: Get lyrics from the public api https://api.lyrics.ovh/v1/%s/%s
+      description: Get lyrics from the public api https://api.lyrics.ovh/v1/
       parameters:
       - description: Artist
         in: path

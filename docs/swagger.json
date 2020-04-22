@@ -52,7 +52,7 @@
         },
         "/lyrics/{artist}/{song}": {
             "get": {
-                "description": "Get lyrics from the public api https://api.lyrics.ovh/v1/%s/%s",
+                "description": "Get lyrics from the public api https://api.lyrics.ovh/v1/",
                 "consumes": [
                     "application/json"
                 ],
