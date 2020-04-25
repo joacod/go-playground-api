@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"     // swagger embed files
 	ginSwagger "github.com/swaggo/gin-swagger" // gin-swagger middleware
@@ -21,6 +22,12 @@ func main() {
 func setupRouter() *gin.Engine {
 	r := gin.Default()
 
+	// CORS Configuration
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"http://localhost:4200"}
+	r.Use(cors.New(config))
+
+	// Swagger Configuration
 	c := controllers.NewController()
 
 	v1 := r.Group("/api/v1")
