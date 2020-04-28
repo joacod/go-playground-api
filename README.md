@@ -1,4 +1,4 @@
-# go-playground-api
+# Go Playground
 Go playground Web API using [Gin](https://github.com/gin-gonic/gin), [Swaggo](https://github.com/swaggo/gin-swagger) and [CORS gin's middleware](https://github.com/gin-contrib/cors)
 
 <p align="center">
