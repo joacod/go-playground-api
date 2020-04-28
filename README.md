@@ -1,5 +1,5 @@
 # go-playground-api
-Go playground Web API using [Gin](https://github.com/gin-gonic/gin) and [Swaggo](https://github.com/swaggo/gin-swagger) (Go version 1.14)
+Go playground Web API using [Gin](https://github.com/gin-gonic/gin), [Swaggo](https://github.com/swaggo/gin-swagger) and [CORS gin's middleware](https://github.com/gin-contrib/cors)
 
 <p align="center">
   <img height="200" src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png">
@@ -7,6 +7,8 @@ Go playground Web API using [Gin](https://github.com/gin-gonic/gin) and [Swaggo]
 </p>
 
 ## Notes
+Go version 1.14
+
 The idea of this project is to provide all the apis that exists in my other repository [NetCore.Playground.Api](https://github.com/joacod/NetCore.Playground.Api)
 
 What we get from this:
