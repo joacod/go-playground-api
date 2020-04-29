@@ -27,7 +27,7 @@ I have created two UI projects to consume the APIs created here, you can use eit
     - This is optional and used only for implemented CRUD operations using GORM
     - If you are not interested in this part, you can avoid the installtion of MySQL and just change the flag named *useMysqlDb* in main.go file
 
-## Installation
+## Installation and Setup
 1. Download Gin framework: `go get github.com/gin-gonic/gin`
 2. Download Swag for Go: `go get -u github.com/swaggo/swag/cmd/swag`
 3. Download [gin-swagger](https://github.com/swaggo/gin-swagger) by using:
@@ -37,6 +37,7 @@ $ go get -u github.com/swaggo/files
 ```
 4. Download MySQL driver for Go: `go get github.com/go-sql-driver/mysql`
 5. Download GORM: `go get github.com/jinzhu/gorm`
+6. Go to the file *database/Database.go* and update DBName, Host, Port, User and Password according to your local environment configuration
 
 ## How to Run it
 1. From the terminal: `go run playground`
