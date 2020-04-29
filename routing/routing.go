@@ -31,6 +31,14 @@ func SetupRouter() *gin.Engine {
 		{
 			lyrics.GET(":artist/:song", c.GetLyrics)
 		}
+		startrek := v1.Group("/startrek")
+		{
+			startrek.GET("crewmember", c.GetMembers)
+			startrek.POST("crewmember", c.CreateMember)
+			startrek.GET("crewmember/:id", c.GetMember)
+			startrek.PUT("crewmember/:id", c.UpdateMember)
+			startrek.DELETE("crewmember/:id", c.DeleteMember)
+		}
 	}
 
 	url := ginSwagger.URL("http://localhost:8080/swagger/doc.json") // The url pointing to API definition

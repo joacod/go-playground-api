@@ -1,5 +1,14 @@
 basePath: /api/v1
 definitions:
+  models.CrewMember:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      starship:
+        type: string
+    type: object
   models.SongLyrics:
     properties:
       Artist:
@@ -81,4 +90,107 @@ paths:
       summary: Get lyrics from an Artist and a Song
       tags:
       - lyrics
+  /startrek/crewmember:
+    get:
+      consumes:
+      - application/json
+      description: Get all Crew Members
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Get all Crew Members
+      tags:
+      - startrek
+    post:
+      consumes:
+      - application/json
+      description: Create a Crew Member
+      parameters:
+      - description: Crew member
+        in: body
+        name: crewMember
+        required: true
+        schema:
+          $ref: '#/definitions/models.CrewMember'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Create a Crew Member
+      tags:
+      - startrek
+  /startrek/crewmember/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a Crew Member
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Delete a Crew Member
+      tags:
+      - startrek
+    get:
+      consumes:
+      - application/json
+      description: Get a Crew Member
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CrewMember'
+      summary: Get a Crew Member
+      tags:
+      - startrek
+    put:
+      consumes:
+      - application/json
+      description: Update a Crew Member
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Crew member
+        in: body
+        name: crewMember
+        required: true
+        schema:
+          $ref: '#/definitions/models.CrewMember'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CrewMember'
+      summary: Update a Crew Member
+      tags:
+      - startrek
 swagger: "2.0"
