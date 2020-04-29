@@ -1,5 +1,5 @@
 # Go Playground
-Go playground Web API using [Gin](https://github.com/gin-gonic/gin), [Swaggo](https://github.com/swaggo/gin-swagger) and [CORS gin's middleware](https://github.com/gin-contrib/cors)
+Go playground Web API using [Gin](https://github.com/gin-gonic/gin), [Swaggo](https://github.com/swaggo/gin-swagger), [CORS gin's middleware](https://github.com/gin-contrib/cors) and [GORM](https://gorm.io/)
 
 <p align="center">
   <img height="200" src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png">
@@ -23,6 +23,9 @@ I have created two UI projects to consume the APIs created here, you can use eit
 ## Prerequisites
 - [Install Go](https://golang.org/)
 - [VS Code Extension for Go](https://github.com/microsoft/vscode-go)
+- [MySQL instance in your system](https://www.mysql.com/)
+    - This is optional and used only for implemented CRUD operations using GORM
+    - If you are not interested in this part, you can avoid the installtion of MySQL and just change the flag named *useMysqlDb* in main.go file
 
 ## Installation
 1. Download Gin framework: `go get github.com/gin-gonic/gin`
@@ -32,6 +35,8 @@ I have created two UI projects to consume the APIs created here, you can use eit
 $ go get -u github.com/swaggo/gin-swagger
 $ go get -u github.com/swaggo/files
 ```
+4. Download MySQL driver for Go: `go get github.com/go-sql-driver/mysql`
+5. Download GORM: `go get github.com/jinzhu/gorm`
 
 ## How to Run it
 1. From the terminal: `go run playground`
@@ -47,3 +52,4 @@ If you change or add new apis:
 ## What you will find so far :heavy_check_mark:
 - [x] Web API created with [Gin](https://github.com/gin-gonic/gin)
 - [x] Swagger documentation of the APIs usign [Swaggo](https://github.com/swaggo/gin-swagger)
+- [x] CRUD operations using GORM and MySQL
