@@ -262,6 +262,29 @@
                     }
                 }
             }
+        },
+        "/startrek/samplecrew": {
+            "post": {
+                "description": "Create a Sample Crew Member with 6 Classic Trek Characters",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "startrek"
+                ],
+                "summary": "Create a Sample Crew",
+                "responses": {
+                    "200": {
+                        "description": "Classic Star Trek Crew created",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {

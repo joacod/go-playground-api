@@ -16,12 +16,12 @@ import (
 // @Success 200 {string} string "ok"
 // @Router /startrek/crewmember [get]
 func (ctr *Controller) GetMembers(c *gin.Context) {
-	var todo []models.CrewMember
-	err := models.GetAllMembers(&todo)
+	var member []models.CrewMember
+	err := models.GetAllMembers(&member)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 	} else {
-		c.JSON(http.StatusOK, todo)
+		c.JSON(http.StatusOK, member)
 	}
 }
 
@@ -35,13 +35,13 @@ func (ctr *Controller) GetMembers(c *gin.Context) {
 // @Success 200 {string} string "ok"
 // @Router /startrek/crewmember [post]
 func (ctr *Controller) CreateMember(c *gin.Context) {
-	var todo models.CrewMember
-	c.BindJSON(&todo)
-	err := models.CreateMember(&todo)
+	var member models.CrewMember
+	c.BindJSON(&member)
+	err := models.CreateMember(&member)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 	} else {
-		c.JSON(http.StatusOK, todo)
+		c.JSON(http.StatusOK, member)
 	}
 }
 
@@ -56,12 +56,12 @@ func (ctr *Controller) CreateMember(c *gin.Context) {
 // @Router /startrek/crewmember/{id} [get]
 func (ctr *Controller) GetMember(c *gin.Context) {
 	id := c.Params.ByName("id")
-	var todo models.CrewMember
-	err := models.GetMember(&todo, id)
+	var member models.CrewMember
+	err := models.GetMember(&member, id)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 	} else {
-		c.JSON(http.StatusOK, todo)
+		c.JSON(http.StatusOK, member)
 	}
 }
 
@@ -76,18 +76,18 @@ func (ctr *Controller) GetMember(c *gin.Context) {
 // @Success 200 {object} models.CrewMember
 // @Router /startrek/crewmember/{id} [put]
 func (ctr *Controller) UpdateMember(c *gin.Context) {
-	var todo models.CrewMember
+	var member models.CrewMember
 	id := c.Params.ByName("id")
-	err := models.GetMember(&todo, id)
+	err := models.GetMember(&member, id)
 	if err != nil {
-		c.JSON(http.StatusNotFound, todo)
+		c.JSON(http.StatusNotFound, member)
 	}
-	c.BindJSON(&todo)
-	err = models.UpdateMember(&todo, id)
+	c.BindJSON(&member)
+	err = models.UpdateMember(&member, id)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 	} else {
-		c.JSON(http.StatusOK, todo)
+		c.JSON(http.StatusOK, member)
 	}
 }
 
@@ -101,12 +101,69 @@ func (ctr *Controller) UpdateMember(c *gin.Context) {
 // @Success 200 {string} string "ok"
 // @Router /startrek/crewmember/{id} [delete]
 func (ctr *Controller) DeleteMember(c *gin.Context) {
-	var todo models.CrewMember
+	var member models.CrewMember
 	id := c.Params.ByName("id")
-	err := models.DeleteMember(&todo, id)
+	err := models.DeleteMember(&member, id)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 	} else {
 		c.JSON(http.StatusOK, gin.H{"id:" + id: "deleted"})
 	}
+}
+
+// CreateSampleCrew godoc
+// @Summary Create a Sample Crew
+// @Description Create a Sample Crew Member with 6 Classic Trek Characters
+// @Tags startrek
+// @Accept json
+// @Produce json
+// @Success 200 {string} string "Classic Star Trek Crew created"
+// @Router /startrek/samplecrew [post]
+func (ctr *Controller) CreateSampleCrew(c *gin.Context) {
+	crew := classicCrew()
+	var err error
+
+	for _, member := range crew {
+		err = models.CreateMember(&member)
+		if err != nil {
+			break
+		}
+	}
+
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)			
+	} else {
+		c.JSON(http.StatusOK, crew)
+	}	
+}
+
+func classicCrew() []models.CrewMember {
+	crew := []models.CrewMember{
+		{
+			Name: "Mr. Spock",
+			Starship: "USS Enterprise NCC-1701",
+		},
+		{
+			Name: "James T. Kirk",
+			Starship: "USS Enterprise NCC-1701",
+		},
+		{
+			Name: "Leonard McCoy",
+			Starship: "USS Enterprise NCC-1701",
+		},
+		{
+			Name: "Jean Luc Picard",
+			Starship: "USS Enterprise NCC-1701-D",
+		},
+		{
+			Name: "Data",
+			Starship: "USS Enterprise NCC-1701-D",
+		},
+		{
+			Name: "William Riker",
+			Starship: "USS Enterprise NCC-1701-D",
+		},
+	}
+
+	return crew
 }

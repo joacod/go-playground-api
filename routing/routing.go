@@ -38,6 +38,7 @@ func SetupRouter() *gin.Engine {
 			startrek.GET("crewmember/:id", c.GetMember)
 			startrek.PUT("crewmember/:id", c.UpdateMember)
 			startrek.DELETE("crewmember/:id", c.DeleteMember)
+			startrek.POST("samplecrew", c.CreateSampleCrew)
 		}
 	}
 

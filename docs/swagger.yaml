@@ -193,4 +193,19 @@ paths:
       summary: Update a Crew Member
       tags:
       - startrek
+  /startrek/samplecrew:
+    post:
+      consumes:
+      - application/json
+      description: Create a Sample Crew Member with 6 Classic Trek Characters
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Classic Star Trek Crew created
+          schema:
+            type: string
+      summary: Create a Sample Crew
+      tags:
+      - startrek
 swagger: "2.0"
