@@ -15,7 +15,7 @@ func SetupRouter() *gin.Engine {
 
 	// CORS Configuration
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"http://localhost:4200", "http://localhost:4545"}
+	config.AllowOrigins = []string{"http://localhost:4200", "http://localhost:4545", "http://localhost:3000"}
 	r.Use(cors.New(config))
 
 	// Swagger Configuration
