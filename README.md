@@ -9,12 +9,12 @@ Go playground Web API using [Gin](https://github.com/gin-gonic/gin), [Swaggo](ht
 ## Notes
 Go version 1.14
 
-The idea of this project is to provide all the apis that exists in my other repository [NetCore.Playground.Api](https://github.com/joacod/NetCore.Playground.Api)
+The idea of this project is to provide all the apis that exists in my other repositories [NetCore.Playground.Api](https://github.com/joacod/NetCore.Playground.Api) and [node-playground-api](https://github.com/joacod/node-playground-api)
 
 What we get from this:
 - We practice different approaches in Go
-- We can compare **Go** implementations with the same ones written in **.NetCore**
-- We have two versions of the same Web Api written in different languages, that can be switched from a UI having the exact same results
+- We can compare **Go** implementations with the same ones written in **.NetCore** and **Node.js**
+- We have three versions of the same Web Api written in different languages, that can be switched from a UI having the exact same results
 
 I have created three UI projects to consume the APIs created here, you can use either of the following repositories:
 - [Angular Playground](https://github.com/joacod/angular-playground-ui)
